@@ -11,7 +11,7 @@ class MongoIO:      #this class is used to interact with mongodb database for st
 
     def __init__(self):
         if MongoIO.mongo_ins is None:
-            mongo_db_url = "mongodb+srv://dpkkr:admin_dpk@cluster0.fv0lm61.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+            mongo_db_url = MONGODB_URL_KEY
             if mongo_db_url is None:
                 raise Exception(f"Environment key: {MONGODB_URL_KEY} is not set.")
             MongoIO.mongo_ins = mongo(client_url=mongo_db_url,
